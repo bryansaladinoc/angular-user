@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-user';
+  hayError = false;
+  size = false;
+  mostrarDiv = true;
+  valorSwitch = 'valor3';
 }
