@@ -1,0 +1,57 @@
+<form [formGroup]="personaModel" (ngSubmit)="guardar()" class="m-3 col-lg-6">
+  <div class="form-group mb-2 needs-validation">
+    <label for="nombre">Nombre</label>
+    <input
+      formControlName="nombre"
+      type="text"
+      id="nombre"
+      name="nombre"
+      class="form-control"
+      required
+      [ngClass]="{ 'input-danger': cNombre?.invalid && (cNombre?.dirty || cNombre?.touched)}"
+    />
+    <!-- <div
+      *ngIf="
+        cNombre?.invalid &&
+        (cNombre?.dirty || personaModel.controls['nombre'].touched)
+      "
+      class="alert alert-danger mt-2"
+    >
+      <div *ngIf="cNombre?.errors?.['required']">El nombre es requerido</div>
+      <div *ngIf="cNombre?.errors?.['minlength']">
+        El nombre debe ser de 4 o más caracteres
+      </div>
+    </div> -->
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="apellido">Apellido</label>
+    <input
+      formControlName="apellido"
+      type="text"
+      id="apellido"
+      name="apellido"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group mb-4">
+    <label for="edad">Edad</label>
+    <input
+      formControlName="edad"
+      type="text"
+      id="edad"
+      name="edad"
+      class="form-control"
+    />
+  </div>
+
+  <p>{{ personaModel.status }}</p>
+  <button
+    [disabled]="personaModel.invalid"
+    type="submit"
+    class="btn btn-primary"
+  >
+    Guardar
+  </button>
+</form>

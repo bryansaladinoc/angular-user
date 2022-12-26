@@ -29,3 +29,58 @@
 </div>
 
 <!-- Directiva personalizada -->
+<span appShadow>Prueba directiva</span>
+<hr />
+
+<!-- ***Bindings*** -->
+
+<!-- Template expressions -->
+<div class="mb-5">
+  <h2>Ejemplo de interpolación</h2>
+  <h3>{{ valor }}</h3>
+</div>
+
+<!-- Template statements -->
+<div class="mb-5">
+  <button (click)="guardarCambios()">Guardar</button>
+  <!-- <form #formDatos (ngSubmit)="guardarForm(formDatos)"></form> -->
+</div>
+
+<!-- Property binding: one-way -->
+<div class="mb-5">
+  <img [src]="urlImagen" alt="" />
+  <tr [style.background-color]="'orange'">
+    <td [colSpan]="2">Span de 2 columns</td>
+  </tr>
+  <p [ngClass]="{ estiloBold: miClase, estiloCursiva: miClase2 }">
+    Binding de clase
+  </p>
+
+</div>
+
+<!-- Property binding: two-way -->
+<div class="mb-5">
+  <p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="pNombre" />
+  </p>
+
+  <p>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" [(ngModel)]="pApellido" />
+  </p>
+
+  <p>
+    <button (click)="verDatos()">Mostrar</button>
+    <button (click)="cargarDatos()">Cargar</button>
+  </p>
+</div>
+<hr />
+
+<!-- Formularios -->
+<!-- <app-formulario1></app-formulario1> -->
+
+<!-- Formularios Reactivos -->
+<app-formulario2></app-formulario2>
+
+

@@ -1,0 +1,45 @@
+<form
+  #formPersona="ngForm"
+  (ngSubmit)="guardar(formPersona.value)"
+  class="m-3 col-lg-6"
+>
+  <div class="form-group mb-2">
+    <label for="nombre">Nombre</label>
+    <input
+      #nombre="ngModel"
+      [(ngModel)]="personaModel.nombre"
+      type="text"
+      id="nombre"
+      name="nombre"
+      class="form-control"
+      required
+    />
+  </div>
+  <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+    El nombre es un dato requerido
+  </div>
+
+  <div class="form-group mb-2">
+    <label for="apellido">Apellido</label>
+    <input
+      [(ngModel)]="personaModel.apellido"
+      type="text"
+      id="apellido"
+      name="apellido"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group mb-4">
+    <label for="edad">Edad</label>
+    <input
+      [(ngModel)]="personaModel.edad"
+      type="text"
+      id="edad"
+      name="edad"
+      class="form-control"
+    />
+  </div>
+
+  <button [disabled]="!formPersona.valid" type="submit" class="btn btn-primary">Guardar</button>
+</form>

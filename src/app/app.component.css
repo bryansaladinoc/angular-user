@@ -5,3 +5,11 @@
 .success {
   background-color: aquamarine;
 }
+
+.estiloBold {
+  font-weight: bold;
+}
+
+.estiloCursiva {
+  font-style: italic;
+}
